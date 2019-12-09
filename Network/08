@@ -1,0 +1,6 @@
+Find the provider of slash16.org:
+
+whois slash16.org
+host ServerName to get IP
+whois server IP
+looks Organization name

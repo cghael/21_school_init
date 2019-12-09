@@ -1,0 +1,11 @@
+#Three’s a Charm. Write a script of you choice.
+
+#!/bin/bash
+[ -z ${1} ] && echo "usage: $0 /path/filename" ||
+if [[ -z `find  $1 -mmin -1440` ]]
+then
+	echo "File hasn't been changed in the last 24h"
+else
+	data=$(stat $1 | grep "Modify" | cut -d "." -f 1 | cut -d " " -f 2,3)
+	echo "File has been changed in $data"
+fi

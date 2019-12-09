@@ -1,0 +1,5 @@
+#List all existing users on the VM
+
+getent passwd | cut -d : -f 1
+#or maybe
+#awk -F : '{print $1}' /etc/passwd

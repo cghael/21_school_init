@@ -1,0 +1,14 @@
+#Write a script which delete an ACTIVE user on the VM.
+
+#!/bin/bash
+admin=$(whoami)
+param=$(who | grep pts | cut -d ' ' -f 1 | grep -v $admin | tail -n 1)
+if [[ -z $param ]]
+then
+	echo "No users to kill :'("
+else
+	sudo pkill -u $param
+	echo "User $param has been killed!"
+	sudo userdel -f $param
+	echo "And deleted from the system <3"
+fi

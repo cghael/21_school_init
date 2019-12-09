@@ -1,0 +1,5 @@
+#List all real users on the VM
+
+#getent passwd | grep /bash | cut -d : -f 1
+#or
+awk -F : '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd

@@ -1,0 +1,6 @@
+Find the service which makes it possible to run specific tasks following a regular schedule
+
+crontab -e
+choose the editor (type it's number)
+add new task as in example
+save and exit

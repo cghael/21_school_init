@@ -1,0 +1,11 @@
+#Identify and display the Ethernet interface characteristics:
+
+#(a) Identify broadcast address
+
+ifconfig | grep broadcast | tail -c 15
+#or
+ifconfig | grep broadcast | cut -d ' ' -f 6
+
+#(b) Identify all IP adresses which are part of the same subnet
+
+arp -a | grep 21-school | cut -d "(" -f 2 | cut -d ")" -f 1

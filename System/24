@@ -1,0 +1,5 @@
+#Find the command that list all packages
+
+#cat /var/lib/apt/extended_states
+#or
+apt list --installed
